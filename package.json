@@ -5,7 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy:upload": " aws s3 sync dist/ s3://investments.ciro.in --acl public-read",
+    "deploy:invalidate": "aws cloudfront create-invalidation --distribution-id E375ZMEBGDKOU1 --paths \"/index.html\"",
+    "deploy": "npm ci && npm run build && npm run deploy:upload && npm run deploy:invalidate"
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.13.5",
