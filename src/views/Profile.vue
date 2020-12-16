@@ -61,6 +61,7 @@
                 id="input-birthdate"
                 v-model="me.birthdate"
                 class="mb-2"
+                show-decade-nav
                 placeholder="Select your birthdate"
               />
             </b-form-group>
