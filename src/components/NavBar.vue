@@ -20,7 +20,12 @@
               :src="me.profilePicture"
               class="rounded-circle"
             />
-            <span v-if="!me || !me.profilePicture">Account</span>
+            <img
+              height="40"
+              v-if="!me || !me.profilePicture"
+              src="../assets/default-avatar.jpg"
+              class="rounded-circle"
+            />
           </template>
           <router-link to="/profile" tag="b-dropdown-item">
             Profile
