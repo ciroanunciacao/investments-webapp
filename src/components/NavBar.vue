@@ -8,7 +8,7 @@
 
     <b-collapse id="nav-collapse" is-nav v-if="!$auth.loading">
       <b-navbar-nav v-if="$auth.isAuthenticated">
-        <b-nav-item href="/">Home</b-nav-item>
+        <router-link to="/" tag="b-nav-item">Home</router-link>
       </b-navbar-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto" v-if="$auth.isAuthenticated">
@@ -22,7 +22,9 @@
             />
             <span v-if="!me || !me.profilePicture">Account</span>
           </template>
-          <b-dropdown-item href="/profile">Profile</b-dropdown-item>
+          <router-link to="/profile" tag="b-dropdown-item">
+            Profile
+          </router-link>
           <b-dropdown-item href="javascript:;" @click="logout">Logout</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
